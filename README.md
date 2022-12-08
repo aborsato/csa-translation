@@ -20,3 +20,35 @@ Try the latest version of Azure Translator. In this quickstart, you'll get start
    ```bash
    python main.py
    ```
+
+Alternatively, you can run it from bash command line:
+```bash
+source .env
+# Pass secret key and region using headers to a custom endpoint
+curl -X POST "$TRANSLATOR_ENDPOINT/translate?api-version=3.0&from=en&to=fr&to=es&to=pt" \
+-H "Ocp-Apim-Subscription-Key: $TRANSLATOR_KEY" \
+-H "Ocp-Apim-Subscription-Region: $TRANSLATOR_LOCATION" \
+-H "Content-Type: application/json" \
+-d "[{'Text':'Hello'}]" -v | jq
+```
+the result will look like this:
+```json
+[
+  {
+    "translations": [
+      {
+        "text": "Bonjour",
+        "to": "fr"
+      },
+      {
+        "text": "Hola",
+        "to": "es"
+      },
+      {
+        "text": "Olá",
+        "to": "pt"
+      }
+    ]
+  }
+]
+```
