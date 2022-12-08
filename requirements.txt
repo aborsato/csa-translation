@@ -1,0 +1,4 @@
+setuptools
+requests
+uuid
+python-dotenv[cli]
