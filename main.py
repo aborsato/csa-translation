@@ -12,7 +12,8 @@ key = os.getenv('TRANSLATOR_KEY')
 endpoint = os.getenv('TRANSLATOR_ENDPOINT')
 
 # location, also known as region.
-# required if you're using a multi-service or regional (not global) resource. It can be found in the Azure portal on the Keys and Endpoint page.
+# required if you're using a multi-service or regional (not global) resource.
+# It can be found in the Azure portal on the Keys and Endpoint page.
 location = os.getenv('TRANSLATOR_LOCATION')
 
 PATH = '/translate'
